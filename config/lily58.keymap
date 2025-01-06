@@ -12,7 +12,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        my_layer {
+        windows_default {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
@@ -60,8 +60,8 @@
 
             bindings = <
 &trans  &trans  &trans      &trans            &trans      &trans                               &trans         &trans         &trans        &trans      &trans  &trans
-&trans  &trans  &trans      &trans            &trans      &kp C_VOLUME_UP                      &kp PAGE_UP    &kp HOME       &kp UP_ARROW  &kp END     &trans  &trans
-&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_DOWN                    &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp RIGHT   &trans  &trans
+&trans  &trans  &trans      &trans            &trans      &kp K_VOLUME_UP                      &kp PAGE_UP    &kp HOME       &kp UP_ARROW  &kp END     &trans  &trans
+&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_VOLUME_DOWN                    &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp RIGHT   &trans  &trans
 &trans  &trans  &trans      &trans            &trans      &kp C_MUTE         &trans    &trans  &trans         &kp BACKSPACE  &trans        &kp DELETE  &trans  &trans
                             &trans            &trans      &trans             &trans    &trans  &mo 2          &trans         &trans
             >;
