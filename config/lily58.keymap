@@ -42,17 +42,17 @@
 
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |       |       |      |       |       |
+            // |  F7   |  F8 |  F9 |  F10 |  F11 |  F12 |                   |      |       |       |      |       |       |
+            // |       |     |     |      |      |      |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &kp F1  &trans  &trans   &trans   &trans                                       &trans    &trans    &trans     &trans  &kp MINUS  &kp EQUAL
-&trans  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                                       &trans    &trans    &trans     &trans  &trans     &trans
-&trans  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                                      &kp PIPE  &kp PLUS  &kp MINUS  &trans  &trans     &kp TILDE
-&trans  &kp F7  &trans  &trans   &trans   &kp LA(F12)  &kp LC(LA(Z))    &kp LC(LA(W))  &trans    &trans    &trans     &trans  &trans     &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                                       &trans    &trans    &trans     &trans  &kp MINUS  &kp EQUAL
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                                      &trans    &trans    &trans     &trans  &trans     &trans
+&trans  &trans  &trans  &trans   &trans   &trans                                       &kp PIPE  &kp PLUS  &kp MINUS  &trans  &trans     &kp TILDE
+&trans  &trans  &trans  &trans   &trans   &kp LA(F12)  &kp LC(LA(Z))    &kp LC(LA(W))  &trans    &trans    &trans     &trans  &trans     &trans
                         &trans   &trans   &mo 1        &trans           &trans         &trans    &trans    &trans
             >;
 
