@@ -69,9 +69,9 @@
 
             bindings = <
 &trans  &trans  &trans      &trans            &trans      &trans                                     &trans         &trans         &trans        &trans      &trans  &trans
-&trans  &trans  &trans      &trans            &trans      &kp C_VOLUME_UP                            &kp PAGE_UP    &kp HOME       &kp UP_ARROW  &kp END     &trans  &trans
-&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_DOWN                          &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp RIGHT   &trans  &kp LC(F12)
-&trans  &trans  &trans      &trans            &trans      &kp C_MUTE         &kp CAPSLOCK    &trans  &trans         &kp BACKSPACE  &trans        &kp DELETE  &trans  &kp LC(F11)
+&trans  &trans  &trans      &trans            &trans      &trans                                     &kp PAGE_UP    &kp HOME       &kp UP_ARROW  &kp END     &trans  &trans
+&trans  &trans  &trans      &trans            &trans      &trans                                     &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp RIGHT   &trans  &kp C_VOLUME_UP
+&trans  &trans  &trans      &trans            &trans      &trans             &kp CAPSLOCK    &trans  &trans         &kp BACKSPACE  &trans        &kp DELETE       &trans  &kp C_VOLUME_DOWN
                             &trans            &trans      &trans             &trans          &trans  &mo 2          &trans         &trans
             >;
 
