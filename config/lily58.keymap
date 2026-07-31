@@ -27,36 +27,6 @@
         };
     };
 
-    macros {
-        // BT profile 0: Windows desktop -> Windows base layer (0)
-        bt_0_win: bt_0_win {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&to 0>;
-        };
-
-        // BT profile 1: iPad -> Mac base layer (4), iPadOS uses Cmd-based shortcuts
-        bt_1_ipad: bt_1_ipad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&to 4>;
-        };
-
-        // BT profile 2: work Windows PC -> Windows base layer (0)
-        bt_2_win: bt_2_win {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&to 0>;
-        };
-
-        // BT profile 3: MacBook -> Mac base layer (4)
-        bt_3_mac: bt_3_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&to 4>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -121,7 +91,7 @@
 
         layer_3 {
             bindings = <
-&trans  &bt_0_win     &bt_1_ipad    &bt_2_win     &bt_3_mac     &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &bt BT_CLR    &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
