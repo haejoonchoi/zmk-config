@@ -30,12 +30,14 @@
         compatible = "zmk,keymap";
 
         windows_default {
+            display-name = "Windows";
             // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
+            // | ESC/` |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   =   |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+            // | SHIFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // |  CTRL |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+            //                     | GUI  | ALT  | LOWER|  SPACE |  | ENTER | RAISE|  ALT  |  BT   |
+            // ESC/` = tap for Esc, hold Alt for `                                                     BT = hold for Bluetooth layer
 
             bindings = <
 &esc_grave        &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                         &kp N6  &kp N7         &kp N8     &kp N9   &kp N0    &kp EQUAL
@@ -49,12 +51,13 @@
         };
 
         lower_layer {
+            display-name = "Lower";
             // ------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |       |       |      |       |       |
-            // |  F7   |  F8 |  F9 |  F10 |  F11 |  F12 |                   |      |       |       |      |       |       |
-            // |       |     |     |      |      |      |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
+            // |  F1   |  F2 |  F3   |  F4    |  F5   |  F6    |             |      |       |       |      |   -   |   =   |
+            // |  F7   |  F8 |  F9   |  F10   |  F11  |  F12   |             |      |       |       |      |       |       |
+            // |       |     |C+A+ - |C+A+ =  | A+F12 | C+F12  |             |  |   |   +   |   -   |      |       |   \   |
+            // |       |     |       |        |       | S+F12  | C+A+Z|C+A+W|      |       |       |      |       |       |
+            //                       |        |       | LOWER  |      |     |      |       |       |
 
             bindings = <
 &kp F1  &kp F2  &kp F3             &kp F4             &kp F5       &kp F6                                       &trans    &trans    &trans     &trans  &kp MINUS  &kp EQUAL
@@ -70,12 +73,13 @@
         };
 
         raise_layer {
+            display-name = "Raise";
             // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
+            // |   `   |     |     |      |      |      |                   |      | PREV  | PLAY  | NEXT |       |       |
+            // |       |     |     |      |      |      |                   | PG_UP| HOME  |  UP   | END  |       |       |
+            // |       |     |     |      |      |      |                   | PG_DN| LEFT  | DOWN  |RIGHT |       | VOL+  |
+            // |       |     |     |      |      |      |  CAPS  |          |      | BSPC  |       | DEL  |       | VOL-  |
+            //                     |      |      |      |        |      | RAISE |      |       |
 
             bindings = <
 &kp GRAVE  &trans  &trans  &trans  &trans  &trans                          &trans         &kp C_PREV     &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
@@ -89,6 +93,13 @@
         };
 
         layer_3 {
+            display-name = "Bluetooth";
+            // ------------------------------------------------------------------------------------------------------------
+            // |       | BT0  | BT1  | BT2  | BT3  | BT4  |                   |      |       |       |      |       |       |
+            // |       |      |      |      |      |      |                   |      |       |       |      |       |       |
+            // |       |      |      |CLEAR |      |      |                   |      |       |       |      |       |       |
+            // |       |      |      |      |      |      |                   |      |       |       |      |       |       |
+            //                     |      |      |      |        |      |      |      |   BT  |
             bindings = <
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
@@ -101,6 +112,13 @@
         };
 
         mac_default {
+            display-name = "Mac";
+            // ------------------------------------------------------------------------------------------------------------
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
+            // | SHIFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // |  CTRL |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+            //                     | ALT  | CMD  | LOWER|  SPACE |  | ENTER | RAISE|  ALT  |  BT   |
             bindings = <
 &kp ESC           &kp N1  &kp N2  &kp N3        &kp N4    &kp N5                         &kp N6  &kp N7         &kp N8     &kp N9   &kp N0    &kp GRAVE
 &kp TAB           &kp Q   &kp W   &kp E         &kp R     &kp T                          &kp Y   &kp U          &kp I      &kp O    &kp P     &kp BACKSLASH
@@ -113,6 +131,8 @@
         };
 
         layer_5 {
+            // Unused / reserved for future bindings
+            display-name = "Extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
@@ -120,6 +140,18 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
+        };
+
+        extra_1 {
+            status = "reserved";
+        };
+
+        extra_2 {
+            status = "reserved";
+        };
+
+        extra_3 {
+            status = "reserved";
         };
     };
 };
